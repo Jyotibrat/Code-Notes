@@ -1,0 +1,462 @@
+{
+  "name": "My workflow 4",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -288,
+        -32
+      ],
+      "id": "070c15d1-3f52-4870-b6cd-03bb2b0bf720",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        432,
+        32
+      ],
+      "id": "c01fa6c8-a690-4337-be25-fd1b1b650710",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "1Re51gxLSwFyk0BN",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        368,
+        480
+      ],
+      "id": "7cf3377c-79b2-4ecb-8b2e-71f2f431be7f",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "1Re51gxLSwFyk0BN",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "webhook",
+        "content": "={{ $json.title }}\n{{ $json.creator }}\n{{ $json.text }}\n{{ $json.link }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 2,
+      "position": [
+        1744,
+        -32
+      ],
+      "id": "5bfaf555-7279-4234-b80f-7a244662bcb6",
+      "name": "Discord",
+      "webhookId": "b2a74c38-e5e8-4556-bef0-9c7c0453ab6f",
+      "credentials": {
+        "discordWebhookApi": {
+          "id": "aGF7Rxddk3vONAMz",
+          "name": "Discord Webhook account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "maxItems": 5
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        288,
+        -416
+      ],
+      "id": "8230970e-4260-4e99-8d4f-ccd8e2fe8332",
+      "name": "Limit on articles from dev.to"
+    },
+    {
+      "parameters": {
+        "url": "https://dev.to/feed/",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        32,
+        -416
+      ],
+      "id": "6ad6c84f-63d8-469f-828e-6140a3f549c4",
+      "name": "RSS Read for dev.to"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Summarize the content. Also if the content is not in english then give me translated summary in english. Summary must be in 2 lines.\n\n {{ $json.content }}",
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        640,
+        -416
+      ],
+      "id": "54e6a2c8-1026-44de-a574-49e23216499c",
+      "name": "dev.to LLM Chain Summarizer"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1008,
+        -144
+      ],
+      "id": "9f25f4df-46be-406f-8bd1-fcf9805eca83",
+      "name": "Merge output from dev.to"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "title"
+            },
+            {
+              "fieldToAggregate": "creator"
+            },
+            {
+              "fieldToAggregate": "text"
+            },
+            {
+              "fieldToAggregate": "link"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1248,
+        -144
+      ],
+      "id": "2199123a-7cc5-4df9-a0fa-46de2a1a2f28",
+      "name": "Aggregate output from dev.to"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "title, creator, text, link",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        1488,
+        -144
+      ],
+      "id": "f0a4a4ea-240f-4f86-97a1-bd17c5db6ba6",
+      "name": "Spliting Output from dev.to"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "title, creator, text, link",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        1488,
+        80
+      ],
+      "id": "8f232133-13a5-46d0-a14a-ef3d20e56e7e",
+      "name": "Spliting Output from bleepingcomputer.com"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "title"
+            },
+            {
+              "fieldToAggregate": "creator"
+            },
+            {
+              "fieldToAggregate": "text"
+            },
+            {
+              "fieldToAggregate": "link"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1248,
+        80
+      ],
+      "id": "51e54387-6834-442e-99be-5349389da318",
+      "name": "Aggregate output from bleepingcomputer.com"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1024,
+        80
+      ],
+      "id": "63637b18-d27e-4922-b317-a7419af3d275",
+      "name": "Merge output from bleepingcomputer.com"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Summarize the content. Also if the content is not in english then give me translated summary in english.\n\n {{ $json.content }}",
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        592,
+        304
+      ],
+      "id": "661e0093-d9ef-47a9-a3a8-4efef0d3a992",
+      "name": "bleepingcomputer.com LLM Chain Summarizer"
+    },
+    {
+      "parameters": {
+        "maxItems": 5
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        272,
+        304
+      ],
+      "id": "1e5891f4-2873-44e4-862a-095b63b8d9a4",
+      "name": "Limit on articles from bleepingcomputer.com"
+    },
+    {
+      "parameters": {
+        "url": "https://www.bleepingcomputer.com/feed/",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -16,
+        304
+      ],
+      "id": "bd1af6ee-9d7c-4e92-b9a3-9ca38edaa918",
+      "name": "RSS Read for bleepingcomputer.com"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "RSS Read for dev.to",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "RSS Read for bleepingcomputer.com",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "dev.to LLM Chain Summarizer",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "bleepingcomputer.com LLM Chain Summarizer",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit on articles from dev.to": {
+      "main": [
+        [
+          {
+            "node": "dev.to LLM Chain Summarizer",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge output from dev.to",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "RSS Read for dev.to": {
+      "main": [
+        [
+          {
+            "node": "Limit on articles from dev.to",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dev.to LLM Chain Summarizer": {
+      "main": [
+        [
+          {
+            "node": "Merge output from dev.to",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge output from dev.to": {
+      "main": [
+        [
+          {
+            "node": "Aggregate output from dev.to",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate output from dev.to": {
+      "main": [
+        [
+          {
+            "node": "Spliting Output from dev.to",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spliting Output from dev.to": {
+      "main": [
+        [
+          {
+            "node": "Discord",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spliting Output from bleepingcomputer.com": {
+      "main": [
+        [
+          {
+            "node": "Discord",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate output from bleepingcomputer.com": {
+      "main": [
+        [
+          {
+            "node": "Spliting Output from bleepingcomputer.com",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge output from bleepingcomputer.com": {
+      "main": [
+        [
+          {
+            "node": "Aggregate output from bleepingcomputer.com",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "bleepingcomputer.com LLM Chain Summarizer": {
+      "main": [
+        [
+          {
+            "node": "Merge output from bleepingcomputer.com",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Limit on articles from bleepingcomputer.com": {
+      "main": [
+        [
+          {
+            "node": "bleepingcomputer.com LLM Chain Summarizer",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge output from bleepingcomputer.com",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RSS Read for bleepingcomputer.com": {
+      "main": [
+        [
+          {
+            "node": "Limit on articles from bleepingcomputer.com",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "2bdef918-1fee-4716-b11d-4bf0c645d869",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5273cbb886bf63bf8ba29001a0919c8ecdc0a7ec7c25cb633ea456a3d9ae9fe9"
+  },
+  "id": "dWIUsosLaP4DtcbP",
+  "tags": []
+}
