@@ -1,0 +1,5 @@
+machine translation best example google translate, Grammarly, MS word.
+
+Named entity recognition (NER): Named Entity Recognition (NER) is a Natural Language Processing (NLP) technique that identifies and classifies key information (named entities) in text, like people (PER), organizations (ORG), locations (LOC), dates, and monetary values, into predefined categories to transform unstructured data into structured information for tasks like search, summarization, and question answering.
+
+Topic modelling: Topic modeling in NLP is an unsupervised machine learning technique that discovers abstract "topics" or themes within large collections of text, automatically grouping related words and documents to reveal underlying structures for better organization, summarization, and analysis.

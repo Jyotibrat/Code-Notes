@@ -1,0 +1,13 @@
+Seed Script For Database:
+
+It automatically populate a local development environment with good usable data in order to work on developing the application.
+
+Primarily there is a main function in the file at the start which is called at the bottom of the file. 
+
+At the start is better to do some checks so that if you are running the seed script it ensures that you are in the development environment and not in the production environment. 
+
+Like if the app has workspaces for the users and the users are allowed to create any number of workspaces then in the seed script determine that the particular user that is in the database has not created more than 3 workspaces. If the user has created more than 3 workspaces then the application is in the production environment and not in the development environment which not safe to run the seed script. 
+
+Then, after this we start truncating the data and start writing in the database. 
+
+Faker is a library which is used to create a fake data which is very useful in development environment.
