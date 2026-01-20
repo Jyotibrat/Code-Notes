@@ -1,0 +1,92 @@
+There are mainly 2 Text representation techniques:
+
+1) Basic Vectorization
+2) Text Embeddings
+
+Basic Vectorization Techniques include: One Hot Encoding
+
+Let's understand using an example:
+
+This is the sentence: "A dog is chasing a person"
+
+After Tokenization it becomes 3 words: "Dog", "Chase" and "Person"
+
+Let's suppose we have these words in the vocabulary: "Dog", "Chase", "Person", "My", "Cat" and "Run".
+
+So we make the matrix like this:
+
+      Dog Chase Person My Cat Run
+Dog    1    0     0    0   0   0
+Chase  0    1     0    0   0   0
+Person 0    0     1    0   0   0
+
+This is the matrix which the Machine Learning Model Ingests.
+
+Benefits of One-Hot Encoding:
+
+1) Intuitive to Understand
+2) Easy to Understand
+
+Disadvantages of One-Hot Encoding:
+
+1) The representation doesn't convey any relationship between words.
+2) The generated matrix is high-dimensional and sparse, leading to overfitting of the ML Model.
+
+Sparse Meaning is that most of the matrix is filled with 0s.
+
+To solve these problems we approach the Text Embedding or Word Embedding Technique.
+
+In text embeddings, words are represented in a lower-dimensional dense vector space, instead of a very high-dimensional sparse space used in basic vectorization.
+
+sparse = lots of zeros in the matrix
+
+High and Low Dimension means that for basic vectorization there are a lot of numbers in the matrix representing a single word or token thus it is high dimensional but in case or text embedding or word embedding the size of the matrix is quite small as compared to the basic vectorization matrix thus it is called as low dimensional.
+
+In text embedding we focus on how the word is related.
+
+Let's understand using this example:
+
+"Queen": The nature of the queen, The origin of the queen, Excitement of the queen, Trust of the queen, etc.
+
+In the graph lets suppose we plot 4 points.
+
+Points are King, Queen, Man and Woman.
+
+The distance between Queen and King and the distance between Man and Woman is same.
+
+So now we will represent Queen using these words:
+
+King - Man + Woman = Queen
+
+This is how represented the word "Queen".
+
+So now we do the vector arithmetic to get the value of "Queen" vector.
+
+This is an example of vector: [0.8,  0.2,  0.6, ...]
+
+Vectors are not matrices.
+
+A graph in which you plot word vectors is a visual representation of a vector space.
+
+Text Embedding is a technique to encode text into meaningful vectors.
+
+Benefits of Text Embedding:
+
+1) They contain dense representation.
+	(a) Low dimension
+	(b) Dense vectors (Dense Embedding)
+2) They capture the semantic meaning of words.
+	(a) Distributed representations
+
+Word2Vec is trained on words (raw text) in order to generate their vectors. Word2Vec is made by Google.
+
+Like Word2Vec there other models also like GloVe by Stanford and fastText by Meta (previously Facebook).
+
+So lets suppose this scenario:
+
+There are 2 different lines: 
+
+1) Dog ate the cake 
+2) Dog is running
+
+The vector for “Dog” will be the SAME in both sentences if we use Word2Vec or GloVe but the vector representation will be different for New Text Embedding Models like GPT or BERT.

@@ -1,0 +1,36 @@
+Feature Extraction: Feature extraction in NLP is the crucial process of converting raw, unstructured text into meaningful numerical formats (vectors/matrices) that machine learning models can understand and process, simplifying complexity by highlighting key information like word frequencies (Bag of Words, TF-IDF) or capturing semantic meaning (word embeddings like Word2Vec, GloVe, BERT), thereby improving model efficiency and accuracy.
+
+The assigning of the numbers that describe a document in relation to the corpus that it contains. This is feature extraction.
+
+TF IDF
+
+Term frequency and 
+
+2 sentences in a corpus:
+
+D1: This is good and awesome
+
+D2: This is bad
+
+TF table:
+
+   This   is   good   bad   awesome   and
+D1: 1/5   1/5   1/5    0      1/5     1/5
+D1: 1/3   1/3    0    1/3     0       0
+
+IDF table:
+
+   This   is   good   bad   awesome   and
+     0    0     0.3   0.3     0.3     0.3
+
+TF x IDF:
+
+   This   is   good   bad   awesome   and
+D1: 0     0    0.06    0      0.06    0.06
+D2: 0     0     0      0.1     0       0
+
+The word with the highest numerical value is considered as the most important word.
+
+Bag of words: It is a feature Extraction process where we count the frequency of each word and based on that the word which has the most frequency is considered as the most important word.
+
+The class TfidfVectorizer does pre processing and also calculates the TF-IDF scores both, but the class TfidfTransformer only calculates the TF-IDF scores. For the later one we need to perform text pre processing manually or using some other library.

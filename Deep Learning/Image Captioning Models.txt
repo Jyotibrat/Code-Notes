@@ -1,0 +1,72 @@
+Image Captioning Models:
+
+In this type of model we use CNN as the internal architecture in encoder decoder architecture.
+
+The encoder is used to generate the feature vectors from the input image which is then passed to the decoder.
+
+We can also use image models like ResNet, Inception, EfficientNet which will generate the thought vectors.
+
+we use GRU in the decoder which is a variation of RNN.
+
+GRU stands for Gated Recurrent Unit.
+
+This is the Decoder Architecture:
+
+The vector embeddings are sent to the GRU layer. The output of the GRU layer is sent to the Attention Mechanism.
+
+Bahdanau attention (or additive attention) is a key mechanism in sequence-to-sequence models, especially for neural machine translation, that allows the decoder to dynamically focus on relevant parts of the input sequence by assigning attention weights, overcoming the bottleneck of traditional encoder-decoder models by not relying solely on a fixed-length context vector.
+
+Dzmitry Bahdanau made the Bahdanau Attention Mechanism (Additive Attention).
+
+In traditional encoder–decoder models (like basic Seq2Seq), the encoder compresses the entire input sequence into a single fixed-length context vector
+
+Input words are tokenized and converted into embeddings. These embeddings pass through the encoder, which produces one hidden state per input token. These hidden states are available to the decoder.
+
+At each decoding time step, the decoder computes its current hidden state using the previous word (or <START> at the first step) and the previous decoder state (initialized using the encoder’s final state or zeros). Using this decoder state, the model assigns attention weights to the encoder hidden states and computes a context vector as their weighted sum.
+
+The decoder hidden state and the context vector are then combined to form the output state, which is passed through a softmax layer to obtain word probabilities. Using greedy or beam search, the next word is selected. This process repeats until the model generates the <EOS> token, ending the decoding.
+
+In this encoder decoder model it has attention mechanism therefore it was computing the context vector in each decoding time step but in standard encoder decoder architecture where there is no attention mechanism the context vector is computed for once which is considered as the final encoder hidden state and it is not computed at every decoding time step.
+
+In Luong Attention, to compute the attention weights, we compare (multiply) the current decoder hidden state with each encoder hidden state. This is what it is separates from Bahdanau.
+
+In Bahdanau to compute the Attention weights we do this:
+
+1) Take current decoder hidden state
+2) Take encoder hidden state
+3) Transform both using weight matrices
+4) Add them
+5) Apply tanh
+6) Take dot product with vector
+7) This gives you one scalar score for each encoder hidden state.
+
+Skip Connection Neural Network is also called as Residual Connection Neural Network.
+
+Why were skip connections introduced?
+
+1) Vanishing Gradient Problem: In very deep networks, gradients can become extremely small as they propagate backward during training. This makes earlier layers learn very slowly or not at all.
+2) Degradation Problem: Researchers found that making networks deeper sometimes made performance worse, even on training data.
+
+In a normal deep neural network, information flows strictly layer by layer. A skip connection (also called a shortcut connection) allows information to bypass one or more layers and jump directly to a later layer.
+
+In a normal layer, you have: H(x) = some transformation of x
+
+With a skip connection, instead of just passing H(x), we do: Output = H(x) + x
+
+So the layer learns a residual function: F(x) = H(x) − x
+
+This is why networks with skip connections are called Residual Networks (ResNets).
+
+Inference loop (or iterative decoding) is the standard, foundational mechanism used to generate captions for arbitrary images.
+
+Steps in Inference Loop:
+
+1) Generate the GRU initial state and create a <START> Token.
+2) Pass an input image to the encoder and extract a feature vector.
+3) Pass the vector to the decoder, and generate caption words in a for loop until it returns <EOS> token or it reach to MAX_CAPTION_LENGTH.
+
+<START> token is the token which represents the start of a sentence.
+
+<EOS> token is the token which represents the end of a sequence or sentence.
+
+MAX_CAPTION_LENGTH in image captioning is a crucial hyperparameter in the inference loop (or iterative decoding) that defines the maximum number of tokens (words) the model is allowed to generate before stopping, even if it has not produced an end-of-sequence token (<end>). 

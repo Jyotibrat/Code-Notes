@@ -1,0 +1,33 @@
+Vector Search
+
+Vector Search is a technology that focuses on semantic similarity.
+
+In key word search we just match the keywords and based on that the results are show but in case of vector search the search is based on the meaning of the word.
+
+Keyword Search:
+
+1) Matches keywords effectively.
+2) Does not understand word meanings.
+3) Lacks knowledge of context.
+
+Vector Search:
+
+1) Finds semantically similar items.
+2) Transforms data to meaningful "embeddings".
+3) Understands context.
+
+Benefits of Vector Search:
+
+1) Semantic Understanding
+2) Multimodal Search Capability
+3) Personalization and Recommendations
+
+Process of Vector Search:
+
+1) Convert data to vectors with embedding models.
+2) Create an index to form vector search space.
+3) Query vector space and retrieve results.
+
+Eg for index:
+
+For a book indexing is like pairing keywords with the pages in which it is found.

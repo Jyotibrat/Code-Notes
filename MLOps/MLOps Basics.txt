@@ -1,0 +1,27 @@
+MLOps: A set of standardized processes and capabilities for building, deploying and operationalizing ML Systems rapidly and reliably.
+
+Non-Generative AI is also known as Predictive AI.
+
+Predictive AI: A type of AI that focuses on performing specific tasks or solving specific problems.
+
+Traditional ML workflow:
+
+Experiment ---> Train ---> Deploy ---> Predict
+
+Evaluate & Monitor and Govern Data & Artifacts
+
+Generative AI focuses more on high-quality, well-curated data than on manually labeled datasets, because it learns via self-supervised objectives rather than explicit labels.
+
+MLOps workflow for GenAI:
+
+Discover & Experiment ---> Tune & Train ---> Distill & Deploy ---> Prompt & Predict <---> Retrieve & Take Action
+	|								^
+	|								|
+	-----------------------------------------------------------------
+
+Evaluate & Monitor, Govern Data & Artifacts and Curate Data
+
+Curated data means data that has been carefully selected, cleaned, organized, and enriched to be high-quality, trustworthy, and ready for specific uses like analysis or machine learning, transforming raw, messy information into a valuable asset.
+
+
+Distillation (Knowledge Distillation) is a technique to compress large, complex AI models ("teachers") into smaller, faster, and more efficient models ("students") by transferring the teacher's "knowledge" (patterns, nuances, predictions) to the student.

@@ -1,0 +1,95 @@
+Vector Indexing:
+
+First we need to calculate the distance between the vectors.
+
+Let's suppose we need to calculate the distance between the "King" Vector and the "Queen" Vector.
+
+But the it is a multi-dimensional vector space so it is very difficult to calculate the distance.
+
+So we use these distance formulas:
+
+1) Manhattan Distance
+2) Euclidean Distance
+3) Cosine Distance
+4) Dot Product Distance
+
+Manhattan Distance:
+
+Manhattan Distance is also called as L1 Distance.
+
+Calculates the distance in a grid-like pattern like streets in Manhattan.
+
+Moves only along one axis at a time.
+
+Euclidean Distance:
+
+Calculates the shortest distance in a straight line.
+
+It is also known as L2 distance.
+
+Cosine Distance:
+
+Calculates the angle between 2 vectors.
+
+Measures the similarity between 2 vectors in terms of direction.
+
+Dot Product Distance:
+
+Dot product distance is also known as inner product distance.
+
+It is based on the projection of one vector onto another.
+
+Considers the similarity between 2 vectors in terms of both direction and magnitude.
+
+Search Algorithms:
+
+1) Brute Force Algorithm
+2) TreeAh Algorithm (Shallow Tree + Asymmetric Hashing)(Widely used for production environment)
+
+Brute Force Algorithm:
+
+1) Calculate the distance between the query and each vector.
+2) Sort the distances.
+3) Find the top k nearest vectors.
+
+TreeAh Algorithm:
+
+Approximate Nearest Neighbor (ANN)
+
+Approximate Search:
+
+1) Divides the space into multiple spaces.
+2) Indexes the spaces using a tree structure.
+3) Trades some accuracy for a significant Speedup over brute force search.
+
+In 2020 Google Research Introduced ScaNN.
+
+Scalable Approximate Nearest Neighbor: It is the foundations for many of Google's services such as Google search and YouTube.
+
+Brute Force Time Complexity is O(N*d)
+
+N: Number of vectors
+d: Number of dimensions
+
+To improve the vector search performance:
+
+1) Space pruning: Reduce the search space
+2) Data quantization: Compress the size of the vectors
+3) Business Logics Integration: Increase ranking efficiency
+
+This is how space pruning works: First we divide the vector space into multiple spaces and then we get the centroids of the those spaces. Now we make a tree out of those centroids and we match the query with those centroids and choose only those centroids which are near to the query and prune the others. This is also called as Multi Level Tree Search. Now we look at those leaf nodes of the centroids which where chosen to be nearest to the query.
+
+Data quantization:
+
+Compress data points:
+
+1) Save space
+2) Reduce indexing time
+
+reduces the size from 9 floats to 12 bits.
+
+Business Logics Integration:
+
+1) Use filter to only retrieve relevant information.
+	country: US, color: Red
+2) Restrict the search to portion of the dataset.

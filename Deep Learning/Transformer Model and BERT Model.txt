@@ -1,0 +1,99 @@
+Transformer Model and BERT Model:
+
+BERT: Bidirectional Encoder Representation from Transformers
+
+Transformer was made on 2017 and first mentioned in the research paper titled as "Attention is all you need"
+
+Transformer is a encoder decoder model with the attention mechanism.
+
+Transformer model increases the performance of translation application.
+
+In the Transformer model, there are 6 encoders which are stack on top of each other.
+
+Each encoder is divided into 2 sub parts which are a Self Attention Layer and a Feed-Forward Neural Network (FNN).
+
+Each encoder has different weights assigned to them.
+
+The Self Attention Layer helps the encoder to look at the relevant pards of the words as it encodes the central word of the sentence.
+
+The Output of the Self Attention Layer is then fed to the Feed-Forward Neural Network (FNN).
+
+In case of the Decoder there are 3 sub layers which are Self Attention Layer, Encoder-Decoder Attention Layer and the Feed-Forward Neural Network.
+
+The Encoder-Decoder Attention Layer helps to identify the relevant parts of the Input Sentence.
+
+After Embedding the words into the input vector, it is allowed to passed through the encoders.
+
+The input vector passes through the Self Attention Layer of the Encoder which the first sub layer in which there are different types of dependencies which is why it does not allow Parallelization.
+
+But in when the output of the Self Attention Layer of the Encoder is passed to the Feed-Forward Neural Network which is the second Layer of the Encoder it allows Parallelization because it has no dependencies.
+
+In the Self Attention Layer, the input vectors are divided into different parts: Query Vector, Key Vector and Value Vector.
+
+These vectors are formed using the weights of the encoder which are changed from time to time as the model learns during training.
+
+These vectors are calculated in the form of matrix computation. 
+
+When we have the Query, Key and Value Vectors then we find the SoftMax score for (Query Vector x Key Vector) multiplied by Value Vector.
+
+Then we need to sum up the Output Vector and send the output to the Feed-Forward Neural Network (FNN).
+
+Process of getting the final z embeddings:
+
+1) Input Natural Language Sentences.
+2) Embed each word.
+3) Perform multi-headed attention and multiple the embedded words with the respective weight matrices.
+4) Calculate the attention using the resulting QKV matrices.
+5) Concatenate the matrices to produce the output matrix which is the same dimension as the final matrix.
+
+There are multiple variations of Transformer. Some use both encoder decoder as there architecture, some use either encoder or decoder as their architecture.
+
+Encoder-Decoder: BART
+Encoder: BERT
+Decoder: GPT-2, GPT-3
+
+BERT is one of the trained transformer models.
+
+BERT was developed by Google on 2018.
+
+BERT was trained on 2 variations.
+
+In the first variations, it contains BERT Base which has 12 stock of transformers with 110 million parameters. 
+
+In the second variations, it contains BERT Large which has 24 stock of transformers with 340 million parameters.
+
+BERT is a powerful model as it can handle large input context. 
+
+BERT was trained on entire Wikipedia corpus and books corpus. 
+
+BERT was trained for 1 million steps. 
+
+BERT was trained on multiple tasks therefore it has multitask objective.
+
+BERT has another speciality which is it works well both at sentence level as well as token level.
+
+BERT was mainly trained 2 tasks.
+
+The first tasks was the masked language model in which the model was required to predict the masked words in the input.
+
+If we want to train the BERT model then we are required to mask 15% of the total input as any percentage above that will give BERT very little context about the input and if the percentage will be low then the training of the BERT model will be expensive.
+
+The next task is the predict that the second sentence is the next sentence or not. It is a binary classification task. This helps BERT to work well at sentence level.
+
+Eg 1: 
+Sentence A: The man went to the store.
+Sentence B: He bought a gallon of milk.
+Label: IsNextSentence
+
+Eg 2:
+Sentence A: The man went to the store.
+Sentence B: Penguins are flightless.
+Label: NotNextSentence
+
+There are three types of Embeddings which are fed to generate the vectors.
+
+Token Embedding: This determines each token in the input sentence.
+
+Segment Embedding: There is a special token after each sentence which separates the sentences which is the [SEP] token which is used to divide pairs of sentences into different segments. This is the Segment Embedding.
+
+Position Embedding: BERT has a hard limit of 512 token as its input token. According to this each token is give a number for its position to maintain the order of the input. This is the Position Embedding.
