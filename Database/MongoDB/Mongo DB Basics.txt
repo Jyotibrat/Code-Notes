@@ -1,0 +1,13 @@
+Mongo DB:
+
+collections: These are basically a type of folder inside a database.
+
+Commands on Mongosh Shell:
+
+show databases: This command will show all the databases in the mongodb database created by you.
+
+use [database_name]: This command will allow the user to use the database "database_name". The name of the database we can change by replacing "[database_name]" to the actual name of the database.
+
+db.[collection_name].find(): This command will show all the data inside the collection of the database which is being used. The name of the collection can be changed by replacing "[collection_name]" to the actual name of the collection.
+
+Playground: It is basically a script which is used to insert data into the mongodb database. The file extension for this file is 'mongodb.js'.

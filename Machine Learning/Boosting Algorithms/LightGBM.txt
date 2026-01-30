@@ -1,0 +1,71 @@
+In fraud detection dataset, the dataset is too much imbalanced like most of the data is not fraud and few transactions are only fraud.
+
+Therefore, it is better not to use accuracy as the evaluation metrics as it determines that how many transactions are not fraud. But, we need to find AUC-ROC that determines how better the model is performing in separating the fraud transactions and which are not fraud.
+
+In LightGBM there is no terminology as epoch as the term epoch is used in deep learning. 
+
+When we use K fold Cross Validation with LighGBM it gets trained on folds.
+
+LightGBM is a boosting algorithm.
+
+Boosting Algorithm: This is an ensemble learning technique in which there is a baseline model which is trained on some amount of data and we then find the errors. Using the errors found in the baseline model we train another model with another set of data which then tries to resolve those errors made by the previous model to increase the overall accuracy.
+
+There are other boosting algorithm:
+
+1) XGBoost
+2) Adaboost
+3) Gradient Boost
+
+Majorly internally the algorithm which runs behind the scenes is decision trees in all the boosting algorithms.
+
+2 Features for which LightGBM are:
+
+1) Binning or Histogram
+2) Exclusive Feature Bundling
+3) Gradient Based One Side Sampling (GOSS)
+
+1) Binning: Binning is a core optimization technique where continuous feature values are grouped into discrete intervals or "bins" to significantly enhance training speed and reduce memory consumption.
+
+2) Exclusive Feature Bundling: Exclusive Feature Bundling (EFB) is
+an optimization technique in LightGBM that addresses the challenges of high-dimensional, sparse data by reducing the number of features to accelerate training speed and reduce memory consumption, with minimal to no loss in accuracy.
+
+Eg for Exclusive Feature Bundling:
+
+Boys Girls
+ 1     0
+ 0     1
+ 1     0
+ 1     0
+
+This basically means that only 1 feature can be 1 and another must be 0 at other times.
+
+So we can reduce it to a single feature like,
+
+Boys will be represented as 10.
+Girls will be represented as 11.
+
+BG
+10
+11
+10
+10
+
+This is basically Exclusive Feature Bundling.
+
+If we are with less compute power like in our local machine let's say then we should use LightGBM but if we are with high compute power then we should use XGBoost.
+
+3) Gradient Based One Side Sampling (GOSS): Gradient-based One-Side Sampling (GOSS) is a smart sampling technique in LightGBM that speeds up training by focusing on informative data, keeping all instances with large gradients (poorly trained) and randomly sampling from those with small gradients (well-trained), boosting accuracy over simple random sampling while reducing data load.
+
+Let's Study this with an example:
+
+There are 500 samples and we train the model with it and we get 500 errors and from those errors we generate the gradients. 
+
+We arrange the gradients in the descending order of their values.
+
+Now we divided the gradients into 2 parts or sections on the 20-80 split in most cases.
+
+We take the 20 gradients and take another 10% of the 80% of the gradients and combine them and train the next model on the basis of that. This is Gradient Based One Side Sampling.
+
+Samples are basically rows.
+
+Features are basically columns.
