@@ -1,0 +1,61 @@
+Lecture 1:
+
+Classification of Machine Learning:
+
+1) Supervised Learning
+2) Unsupervised Learning
+3) Reinforcement Learning
+4) Semi-Supervised Learning
+
+Categorizing on the Basis of Required Output:
+
+1) Classification
+2) Regression
+3) Clustering
+
+Tools Available for Machine Learning:
+
+1) Scikit-Learn
+2) TensorFlow
+3) Keras
+4) Ktrain
+5) Pytorch
+
+Algorithms in Machine Learning:
+
+1) Regression
+2) Logistic Regression
+3) SVM
+4) Decision Tree
+5) Random Forest
+6) CNN
+7) RNN (LSTM)
+8) CNN + LSTM
+9) GRU
+10) Transformers
+11) K-Means Clustering
+12) Mean-Shift Clustering
+13) Density-Based Spatial Clustering of Applications with Noise (DBSCAN)
+14) Expectation-Maximization (EM) Clustering using Gaussian Mixture Models (GMM)
+
+Pipeline for Machine Learning:
+
+Data Collection ---> Data Cleaning ---> Model Training and Building ---> Model Validation ---> Model Testing ---> Deployment
+                           |			   ^						     ^  |
+			   |			   |			     |                       |  |
+			  -------------------------|------------------- Data Testing -----------------  |
+						   ------------------------------------------------------
+                                                                  Machine Learning Process Sequence
+
+
+Training and Testing Data:
+
+Training Data: A subset of data to train a model.
+
+Testing Data: A subset of data test the trained model.
+
+Make sure that Test Dataset meets the following 2 conditions:
+
+1) Large enough to yield statistically meaningful results.
+2) Representative of the data set as a whole.
+3) In other words, do not pick a test dataset with different characteristics than the training dataset.
