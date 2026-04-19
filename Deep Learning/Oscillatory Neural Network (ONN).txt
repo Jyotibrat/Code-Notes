@@ -1,0 +1,23 @@
+Oscillatory Neural Network (ONN)
+
+An Oscillatory Neural Network (ONN) is a type of computer brain that processes information using timing and rhythms instead of static numbers. 
+
+Think of a traditional neural network as a row of light switches (ON or OFF). An ONN is like a row of metronomes (ticking left and right). The computer doesn't look at where the metronome is sticking; it looks at when it ticks compared to its neighbors.
+
+How It Works (The "Applause" Analogy):
+
+To understand how an ONN "thinks," imagine a concert hall full of people clapping after a performance.
+
+1. Input (The Start): Initially, everyone claps at different speeds and times. This chaotic noise represents the raw data (like a blurry image).
+2. Coupling (The Connection): People naturally listen to their neighbors. If the person next to you claps slightly faster, you speed up. If they are slower, you slow down. In an ONN, "weights" are physical connections (like resistors) that force oscillators to speed up or slow down to match each other.
+3. Synchronization (The Thinking): Quickly, groups of people start clapping in perfect unison. The chaotic noise turns into a steady, rhythmic beat.
+4. The Output (The Answer): This final, synchronized rhythm is the "answer." If the network settles into Rhythm A, it recognized a "Cat." If it settles into Rhythm B, it recognized a "Dog."
+
+Advantages:
+
+Speed: Synchronization happens almost instantly. You don't need to calculate layer 1, then layer 2, then layer 3. The whole network solves the problem at once.
+Low Energy: Because it uses natural physical vibrations (resonance), it consumes very little electricity compared to moving data back and forth in a normal chip.
+
+Uses:
+
+It can be used in Noise-Resistant Image Recognition, Traveling Salesman Problem (TSP) and Phase-Based Analysis of EEG and ECG using Oscillatory Neural Networks.
