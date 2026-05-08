@@ -1,0 +1,124 @@
+Module 1: Machine Learning with Python
+
+Machine Learning Paradigms:
+
+1) Supervised Machine Learning: The models trains on labeled data.
+
+2) Unsupervised Machine Learning: Works without labeled data.
+
+3) Semi-supervised Machine Learning: Semi-supervised Machine Learning trains on a relatively small subset of data that is already labeled and iteratively retrains itself by adding new labels that it generates with reasonably high confidence.
+
+4) Reinforcement Learning: It learns from feedback
+
+Machine Learning Model Lifecycle:
+
+1) Problem Definition
+2) Data Collection
+3) Data Preparation
+4) Model Development and Evaluation
+5) Model Deployment
+
+Data Collection and Data Preparation Process is also called as the ETL process.
+
+ETL stands for Extract, Transform and Load.
+
+Tools for ML:
+
+ML Libraries:
+
+Pandas Library: Data manipulation and analysis
+
+Scikit-learn Library: Supervised and unsupervised learning algorithms for linear regression
+
+Machine Learning Programming Languages:
+
+Python: 
+
+1) Analyzing and processing data
+2) Developing ML models
+
+R:
+
+1) Statistical Learning
+2) Data exploration and ML
+
+Julia: 
+
+Parallel and distributed numerical computing support
+
+Scala:
+
+Processing Big Data and building ML pipelines
+
+Java: 
+
+Supporting scalable ML applications
+
+JavaScript:
+
+Running ML models in web browsers
+
+Data Processing and Analytics Tools:
+
+PostgreSQL: Relational DBMS
+
+Hadoop: Batch processing solution for big data
+
+Spark: Distributed data processing framework
+
+Kafka: Distributed real time streaming analytics
+
+Pandas: Data wrangling and pre-processing
+
+NumPy: Numerical computing tools
+
+Data Visualization Tools:
+
+Matplotlib: Customizable plots and interactive visualizations
+
+Seaborn: Attractive statistical graphics
+
+ggplot2: Building and adding elements in layers
+
+Tableau: Interactive data visualization dashboards
+
+Other Libraries:
+
+SciPy: Computing for optimization, integration and linear regression
+
+Deep Learning Libraries and Tools:
+
+TensorFlow: Numerical computing and large-scale ML
+
+Keras: Implementing neural networks
+
+Theano: Defining, optimizing, and evaluating mathematical expressions involving arrays.
+
+PyTorch: Computer Vision, NLP and experimentation
+
+Computer Vision Tools: Real-time computer vision applications
+
+OpenCV: Real-time: Image processing algorithms
+
+TorchVision: Popular data sets, image loading, pre-trained deep learning architectures, and image transformations
+
+NLP Tools:
+
+NLTK: Text processing, tokenization and stemming
+
+TextBlob: Part-of-speech tagging, noun phrase extraction, sentiment analysis and translation
+
+Stanza: Pre-trained models for tasks such as part-of-speech tagging, named entity recognition, and dependency parsing.
+
+Generative AI Tools:
+
+Hugging Face Transformers: Text generation, language translation and sentiment analysis
+
+ChatGPT: Text generation, building chatbots, etc.
+
+DALL-E: Generating images from text descriptions
+
+Machine Learning Ecosystem:
+
+Machine Learning Ecosystem means interconnected tools, frameworks, libraries, platforms and processes that supports developing, deploying and managing ML models.
+
