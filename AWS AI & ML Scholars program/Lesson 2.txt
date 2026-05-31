@@ -1,0 +1,26 @@
+Types of unsupervised ML:
+
+Unsupervised learning encompasses various techniques and algorithms. Two main subcategories of unsupervised learning are clustering and dimensionality reduction. 
+
+Clustering:
+
+A common subcategory of unsupervised learning is clustering. This kind of algorithm groups data into different clusters based on similar features or distances between the data point to better understand the attributes of a specific cluster.
+
+For example, by analyzing customer purchasing habits, an unsupervised algorithm can identify a company as being large or small.
+
+Use cases include the following: 
+
+1)Customer segmentation
+2)Targeted marketing
+3)Recommended systems
+
+Dimensionality Reduction:
+
+Dimensionality reduction is an unsupervised learning technique used to reduce the number of features or dimensions in a dataset while preserving the most important information or patterns.
+
+Use cases include the following:
+
+1)Big data visualization
+2)Meaningful compression
+3)Structure discovery
+4)Feature elicitation

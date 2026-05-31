@@ -1,0 +1,161 @@
+Bias:
+
+Bias is one of the biggest challenges a developer faces in AI systems. Bias in a model means that the model is missing important features of the datasets. This means that the data is too basic. Bias is measured by the difference between the expected predictions of the model and the true values we are trying to predict. If the difference is narrow, then the model has low bias. If the difference is wide, then the model has a high bias.
+
+When a model has a high bias, it is underfitted. Underfitted means that the model is not capturing enough difference in the features of the data, and therefore, the model performs poorly on the training data.
+
+Variance:
+
+Variance offers a different challenge for developers. Variance refers to the model's sensitivity to fluctuations or noise in the training data. The problem is that the model might consider noise in the data to be important in the output. When variance is high, the model becomes so familiar with the training data that it can make predictions with high accuracy. This is because it is capturing all the features of the data.
+
+However, when you introduce new data to the model, the model's accuracy drops. This is because the new data can have different features that the model is not trained on. This introduces the problem of overfitting. Overfitting is when model performs well on the training data but does not perform well on the evaluation data. This is because the model is memorizing the data it has seen and is unable to generalize to unseen examples.
+
+Bias-variance trade-off:
+
+Bias-variance tradeoff is when you optimize your model with the right balance between bias and variance. This means that you need to optimize your model so that it is not underfitted or overfitted. The goal is to achieve a trained model with the lowest bias and lowest variance tradeoff for a given data set.
+
+To help overcome bias and variance errors, we can use the following:
+
+1) Cross-validation: Cross-validation is a technique for evaluating ML models by training several ML models on subsets of the available input data and evaluating them on the complementary subset of the data. Cross-validation should be used to detect overfitting.
+2) Increase Data: Add more data samples to increase the learning scope of the model.
+3) Regularization: Use regularization. Regularization is a method that penalizes extreme weight values to help prevent linear models from overfitting training data examples.
+4) Simpler Models: Use simpler model architectures to help with overfitting. If the model is underfitting, the model might be too simple.
+5) Dimension Reduction(PCA): Apply dimension reduction. Dimension reduction is an unsupervised machine learning algorithm that attempts to reduce the dimensionality (number of features) within a dataset while still retaining as much information as possible.
+6) Stop Training Early: End training early so that the model does not memorize the data.
+
+
+
+Amazon SageMaker AI:
+
+Amazon SageMaker AI is a fully managed ML service. With SageMaker AI, data scientists and developers can quickly and confidently build, train, and deploy ML models into a production-ready hosted environment. It provides a UI experience for running ML workflows that makes SageMaker AI ML tools available across multiple integrated development environments (IDEs).
+
+With SageMaker AI, you can store and share your data without having to build and manage your own servers. This gives you or your organization more time to collaboratively build and develop your ML workflow and do it sooner. SageMaker AI provides managed ML algorithms to run efficiently against extremely large data in a distributed environment. With built-in support for bring-your-own-algorithms and frameworks, SageMaker AI offers flexible distributed training options that adjust to your specific workflows. Within a few steps, you can deploy a model into a secure and scalable environment from the SageMaker AI console.
+
+Amazon Bedrock:
+
+Amazon Bedrock is a fully managed service that makes available high-performing FMs from leading AI startups and Amazon for your use through a unified API. You can choose from a wide range of FMs to find the model that is best suited for your use case.
+
+Amazon Bedrock also offers a broad set of capabilities to build generative AI applications with security, privacy, and responsible AI.
+
+With the serverless experience of Amazon Bedrock, you can privately customize FMs with your own data and securely integrate and deploy them into your applications by using AWS tools without having to manage any infrastructure.
+
+
+
+Model evaluation on Amazon Bedrock:
+
+With Model evaluation on Amazon Bedrock, you can evaluate, compare, and select the best foundation model for your use case in just a few clicks. Amazon Bedrock offers a choice of automatic evaluation and human evaluation.
+
+1) Automatic evaluation offers predefined metrics such as accuracy, robustness, and toxicity.
+2) Human evaluation offers subjective or custom metrics such as friendliness, style, and alignment to brand voice. For human evaluation, you can use your in-house employees or an AWS-managed team as reviewers.
+
+Now that you have learned about model evaluation on Amazon Bedrock, move on to the next tab to learn about SageMaker AI Clarify.
+
+SageMaker AI Clarify:
+
+SageMaker AI Clarify supports FM evaluation. You can automatically evaluate FMs for your generative AI use case with metrics such as accuracy, robustness, and toxicity to support your responsible AI initiative.
+
+For criteria or nuanced content that requires sophisticated human judgment, you can choose to use your own workforce or use a managed workforce provided by AWS to review model responses.
+
+SageMaker AI Clarify is integrated with Amazon SageMaker AI Experiments to provide scores detailing which features contributed the most to your model prediction on a particular input for tabular, natural language processing (NLP), and computer vision models. For tabular datasets, SageMaker AI Clarify can also output an aggregated feature importance chart that provides insights into the overall prediction process of the model. These details can help determine if a particular model input has more influence than expected on overall model behavior.
+
+
+
+Amazon SageMaker Data Wrangler:
+
+Amazon SageMaker Data Wrangler can be used to balance your data in cases of any imbalances. SageMaker Data Wrangler offers three balancing operators: random undersampling, random oversampling, and Synthetic Minority Oversampling Technique (SMOTE) to rebalance data in your unbalanced datasets.
+
+
+
+Amazon SageMaker Model Monitor:
+
+Amazon SageMaker Model Monitor monitors the quality of SageMaker AI machine learning models in production. You can set up continuous monitoring with a real-time endpoint (or a batch transform job that runs regularly), or on-schedule monitoring for asynchronous batch transform jobs. With SageMaker Model Monitor, you can set alerts that notify you when there are deviations in the model quality. With early and proactive detection of these deviations, you can take corrective actions.
+
+
+
+Amazon Augmented AI (Amazon A2I):
+
+Amazon Augmented AI (Amazon A2I) is a service that helps build the workflows required for human review of ML predictions. Amazon A2I brings human review to all developers and removes the undifferentiated heavy lifting associated with building human review systems or managing large numbers of human reviewers.
+
+
+
+Transparency:
+
+Transparency helps to understand HOW a model makes decisions.
+
+This helps to provide accountability and builds trust in the AI system. Transparency also makes auditing a system easier. 
+
+Explainability:
+
+Explainability helps to understand WHY the model made the decision that it made. It gives insight into the limitations of a model. 
+
+This helps developers with debugging and troubleshooting the model. It also allows users to make informed decisions on how to use the model. 
+
+Counterfactual explanations:
+
+Counterfactual explanations are an Explainable AI (XAI) method that describes the smallest change needed to an input to reverse a machine learning model's output.
+
+Explainability Frameworks:
+
+There are several explainability frameworks available, such as SHapley Value Added (SHAP), Layout-Independent Matrix Factorization (LIME), and Counterfactual Explanations, that can help summarize and interpret the decisions made by AI systems. These frameworks can provide insights into the factors that influenced a particular decision and help assess the fairness and consistency of the AI system.
+
+AI Service Cards:
+
+AI Service Cards are a resource to increase transparency and help customers better understand AWS AI services, including how to use them in a responsible way. AI service cards are a form of responsible AI documentation that provides customers with a single place to find information on the intended use cases and limitations, responsible AI design choices, and the deployment and operation best practices for our AI services.
+
+Amazon SageMaker Model Cards:
+
+Use SageMaker Model Cards to document critical details about your ML models in a single place for streamlined governance and reporting.
+
+Catalog details include information such as the intended use and risk rating of a model, training details and metrics, evaluation results and observations, and additional callouts such as considerations, recommendations, and custom information.
+
+SageMaker Autopilot
+
+Amazon SageMaker Autopilot uses tools provided by SageMaker AI Clarify to help provide insights into how ML models make predictions. These tools can help ML engineers, product managers, and other internal stakeholders understand model characteristics. To trust and interpret decisions made on model predictions, both consumers and regulators rely on transparency in machine learning.
+
+
+
+Interpretability:
+
+Interpretability is the access into a system so that a human can interpret the model’s output based on the weights and features. For example, if a business wants high model transparency and wants to understand exactly why and how the model is generating predictions, they need to observe the inner mechanics of the AI/ML method.
+
+Explainability:
+
+Explainability is how to take an ML model and explain the behavior in human terms. With complex models (for example, black boxes), you cannot fully understand how and why the inner mechanics impact the prediction. However, through model agnostic methods (for example, partial dependence plots, SHAP dependence plots, or surrogate models) you can discover meaning between input data attributions and model outputs. With that understanding, you can explain the nature and behavior of the AI/ML model.
+
+Model control:
+
+A controllable model is one where you can influence the model's predictions and behavior by changing aspects of the training data. Higher controllability provides more transparency into the model and allows correcting undesired biases and outputs. 
+
+Model controllability is measured by how much control you have over the model by changing the input data. Models that are more controllable are easier to steer towards desired behaviors. This is important for fairness because you want to be able to understand and control bias in the model. Controllability of a model is also important for transparency and debugging in a model. 
+
+
+
+Human-centered design (HCD):
+
+Human-centered design (HCD) is an approach to creating products and services that are intuitive, easy to use, and meet the needs of the people who will be using them. When applied to explainable AI, HCD helps ensure that the explanations and interfaces provided are clear, understandable, and useful to the people they are intended to serve. This includes being accurate and fair.
+
+The following are key principles of human-centered design for explainable AI: 
+
+• Design for amplified decision-making.
+• Design for unbiased decision-making.
+• Design for human and AI learning.
+
+Design for amplified decision-making:
+
+The principle of design for amplified decision-making supports decision-makers in high-stakes situations. This principle seeks to maximize the benefits of using technology while minimizing potential risks and errors, especially risks and errors that can occur when humans make decisions under stress or in high-pressure environments. This can lead to better outcomes for individuals, organizations, and society as a whole.
+
+Design for unbiased decision-making:
+
+The design for unbiased decision-making principle and practices aim to ensure that the design of decision-making processes, systems, and tools is free from biases that can influence the outcomes. This can have significant impacts on decision-making outcomes and help promote fairness and efficient use of resources. 
+
+Design for human and AI learning:
+
+Design for human and AI learning is a process that aims to create learning environments and tools that are beneficial and effective for both humans and AI. It encompasses a range of strategies and approaches that take into account the unique strengths and limitations of each learner and the goals and purposes of the learning experience.
+
+Reinforcement learning from human feedback:
+
+Reinforcement learning from human feedback (RLHF) is an ML technique that uses human feedback to optimize ML models to self-learn more efficiently. Reinforcement learning (RL) techniques train software to make decisions that maximize rewards, which makes their outcomes more accurate. RLHF incorporates human feedback in the rewards function, so the ML model can perform tasks aligned with human goals, wants, and needs. RLHF is used in both traditional AI and generative AI applications. 
+
+Amazon SageMaker Ground Truth:
+
+SageMaker Ground Truth offers the most comprehensive set of human-in-the-loop capabilities for incorporating human feedback across the ML lifecycle to improve model accuracy and relevancy. SageMaker Ground Truth includes a data annotator for RLHF capabilities. You can give direct feedback and guidance on output that a model has generated by ranking, classifying, or doing both for its responses for RL outcomes. The data, referred to as comparison and ranking data, is effectively a reward model or reward function that is then used to train the model. You can use comparison and ranking data to customize an existing model for your use case or to fine-tune a model that you build from scratch.

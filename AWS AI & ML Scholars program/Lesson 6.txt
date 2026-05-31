@@ -1,0 +1,91 @@
+Retrieval-Augmented Generation:
+
+Vector embeddings:
+
+Embedding is the process by which text, images, and audio are given numerical representation in a vector space. Embedding is usually performed by a machine learning (ML) model. The following diagram provides more details about embedding. 
+
+Storing vectors:
+
+The core function of vector databases is to compactly store billions of high-dimensional vectors representing words and entities. Vector databases provide ultra-fast similarity searches across these billions of vectors in real time. 
+
+The most common algorithms used to perform the similarity search are k-nearest neighbors (k-NN) or cosine similarity.
+
+Amazon Web Services (AWS) offers the following viable vector database options:
+
+1) Amazon OpenSearch Service (provisioned)
+2) Amazon OpenSearch Serverless
+3) pgvector extension in Amazon Relational Database Service (Amazon RDS) for PostgreSQL
+4) pgvector extension in Amazon Aurora PostgreSQL-Compatible Edition
+5) Amazon Kendra
+
+
+
+Evaluate results:
+
+Benchmark datasets:
+
+Creating a benchmark dataset:
+
+The creation of a benchmark dataset is key to evaluate a RAG system. Following are the steps involving the creation of a benchmark dataset.
+
+1) Create relevant questions:
+
+First, subject matter experts (SMEs) create relevant and challenging questions related to the topic of interest or specific documents.
+
+2) Context identification:
+
+SMEs identify pertinent sections of the documents that provide context necessary for generating answers.
+
+3) Answer drafting:
+
+The evaluation of LLM performance using a benchmark dataset can be automated using an LLM as a judge approach.
+
+To learn more about the LLM as a judge approach, choose each hotspot.
+
+
+
+Fine-Tuning:
+
+The different fine-tuning approaches:
+
+1) Instruction tuning: This approach involves retraining the model on a new dataset that consists of prompts followed by the desired outputs. This is structured in a way that the model learns to follow specific instructions better. This method is particularly useful for improving the model's ability to understand and execute user commands accurately, making it highly effective for interactive applications like virtual assistants and chatbots. 
+
+2) Reinforcement learning from human feedback (RLHF): This approach is a fine-tuning technique where the model is initially trained using supervised learning to predict human-like responses. Then, it is further refined through a reinforcement learning process, where a reward model built from human feedback guides the model toward generating more preferable outputs. This method is effective in aligning the model’s outputs with human values and preferences, thereby increasing its practical utility in sensitive applications.
+
+3) Adapting models for specific domains: This approach involves fine-tuning the model on a corpus of text or data that is specific to a particular industry or sector.  An example of this would be legal documents for a legal AI or medical records for a healthcare AI. This specificity enables the model to perform with a higher degree of relevance and accuracy in domain-specific tasks, providing more useful and context-aware responses.
+
+4) Transfer learning: This approach is a method where a model developed for one task is reused as the starting point for a model on a second task. For foundational models, this often means taking a model that has been trained on a vast, general dataset, then fine-tuning it on a smaller, specific dataset. This method is highly efficient in using learned features and knowledge from the general training phase and applying them to a narrower scope with less additional training required.
+
+5) Continuous pretraining: This approach involves extending the training phase of a pre-trained model by continuously feeding it new and emerging data. This approach is used to keep the model updated with the latest information, vocabulary, trends, or research findings, ensuring its outputs remain relevant and accurate over time.
+
+
+
+Model evaluation:
+
+ROUGE:
+
+ROUGE is a set of metrics used to evaluate automatic summarization of texts, in addition to machine translation quality in NLP. The main idea behind ROUGE is to count the number of overlapping units. This includes words, N-grams, or sentence fragments between the computer-generated output and a set of reference (human-created) texts.
+
+The following are two ways to use the ROUGE metric:
+
+1) ROUGE-N: This metric measures the overlap of n-grams between the generated text and the reference text. For example, ROUGE-1 refers to the overlap of unigrams, ROUGE-2 refers to bigrams, and so on. This metric primarily assesses the fluency of the text and the extent to which it includes key ideas from the reference.
+
+2) ROUGE-L: This metric uses the longest common subsequence between the generated text and the reference texts. It is particularly good at evaluating the coherence and order of the narrative in the outputs.
+
+ROUGE is widely used because it is not complex. It is interpretable, and correlates reasonably well with human judgment, especially when evaluating the recall aspect of summaries. The evaluations assess how much of the important information in the source texts is captured by the generated summaries.
+
+BLEU:
+
+BLEU is a metric used to evaluate the quality of text that has been machine-translated from one natural language to another. Quality is calculated by comparing the machine-generated text to one or more high-quality human translations. BLEU measures the precision of N-grams in the machine-generated text that appears in the reference texts and applies a penalty for overly short translations (brevity penalty).
+
+Unlike ROUGE, which focuses on recall, BLEU is fundamentally a precision metric. It checks how many words or phrases in the machine translation appear in the reference translations. BLEU evaluates the quality at the level of the sentence, typically using a combination of unigrams, bigrams, trigrams, and quadrigrams. A brevity penalty discourages overly concise translations that might influence the precision score.
+
+BLEU is popular in the field of machine translation for its ease of use and effectiveness at a broad scale. However, it has limitations in assessing the fluency and grammaticality of the output.
+
+The BERTScore:
+
+BERTScore uses the pretrained contextual embeddings from models like BERT to evaluate the quality of text-generation tasks. BERTScore computes the cosine similarity between the contextual embeddings of words in the candidate and the reference texts. This is unlike traditional metrics that rely on exact matches of N-grams or words.
+
+Because BERTScore evaluates the semantic similarity rather than relying on exact lexical matches, it is capable of capturing meaning in a more nuanced manner. BERTScore is less prone to some of the pitfalls of BLEU and ROUGE. An example of this is their sensitivity to minor paraphrasing or synonym usage that does not affect the overall meaning conveyed by the text.
+
+BERTScore is increasingly used alongside traditional metrics like BLEU and ROUGE for a more comprehensive assessment of language generation models. This is especially true in cases where capturing the deeper semantic meaning of the text is important.

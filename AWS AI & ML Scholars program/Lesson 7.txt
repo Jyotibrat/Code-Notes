@@ -1,0 +1,157 @@
+Concepts of security, governance, and compliance in organizations:
+
+Security, governance, and compliance might seem like the same function. The following are examples of the primary goals of each:
+
+1) Security: Ensure that confidentiality, integrity, and availability are maintained for organizational data and information assets and infrastructure. This function is often called information security or cybersecurity in an organization.
+2) Governance: Ensure that an organization can add value and manage risk in the operation of business.
+3) Compliance: Ensure normative adherence to requirements across the functions of an organization.
+
+Defense in depth for AI on AWS:
+
+Data protection:
+
+Data at rest: Ensure that all data at rest is encrypted with AWS Key Management Service (AWS KMS) or customer managed key. Make sure all data and models are versioned and backed up using Amazon Simple Storage Service (Amazon S3) versioning.
+
+Data in transit: Protect all data in transit between services using AWS Certificate Manager (ACM) and AWS Private Certificate Authority (AWS Private CA). Keep data within virtual private clouds (VPCs) using AWS PrivateLink.
+
+Identity and access management:
+
+Identity and access management ensures that only authorized users, applications, or services can access and interact with the cloud infrastructure and its services.
+
+AWS offers several services that can be used for identity and access management. The fundamental service is AWS Identity and Access Management (IAM).
+
+Application protection:
+
+This includes measures to protect against various threats, such as unauthorized access, data breaches, denial-of-service (DoS) attacks, and other security vulnerabilities.
+
+AWS offers several services to protect applications. These include the following:
+
+1) AWS Shield
+2) Amazon Cognito
+3) Others
+
+Network and edge protection:
+
+Security services are used to protect the network infrastructure and the boundaries of a cloud environment. Services are designed to prevent unauthorized access, detect and mitigate threats, and ensure the security of the cloud-based resources.
+
+AWS services that provide network and edge protection include the following:
+
+1) Amazon Virtual Private Cloud (Amazon VPC)
+2) AWS WAF
+
+Infrastructure protection:
+
+Protect against various threats, such as unauthorized access, data breaches, system failures, and natural disasters. Ensure the availability, confidentiality, and integrity of the cloud-based resources and data. Some AWS services and features include the following:
+
+1) AWS Identity and Access Management (IAM)
+2) IAM user groups and network access control lists (network ACLs)
+
+Threat detection and incident response:
+
+Identify and address potential security threats or incidents.
+
+AWS services that help with threat detection include:
+
+1) AWS Security Hub
+2) Amazon GuardDuty
+
+AWS services for incident response include the following:
+
+1) AWS Lambda
+2) Amazon EventBridge
+
+Policies, procedures, and awareness:
+
+Implement a policy of least privilege using AWS Identity and Access Management Access Analyzer to look for overly permissive accounts, roles, and resources. Then, restrict access using short-termed credentials.
+
+
+
+AWS Config:
+
+AWS Config provides a detailed view of the configuration of AWS resources in your AWS account. This includes how the resources are related to one another and how they were configured in the past so that you can see how the configurations and relationships change over time.
+
+When you run your applications on AWS, you usually use AWS resources, which you must create and manage collectively. As the demand for your application keeps growing, so does your need to keep track of your AWS resources. The following are some scenarios where AWS Config can help you oversee your application resources:
+
+1) Resource administration: Exercise governance over your resource configurations and detect resource misconfigurations.
+2) Auditing and compliance: You might work with data that requires frequent audits to ensure compliance with internal policies and best practices. AWS Config helps you demonstrate compliance by providing access to the historical configurations of your resources.
+3) Managing and troubleshooting configuration changes: You can view how any resource you intend to modify is related to other resources and assess the impact of your change.
+
+Amazon Inspector:
+
+Amazon Inspector is a vulnerability management service that continuously scans your AWS workloads for software vulnerabilities and unintended network exposure.
+
+Amazon Inspector automatically discovers and scans running AWS resources for known software vulnerabilities and unintended network exposure. Some of these resources include Amazon Elastic Compute Cloud (Amazon EC2) instances, container images, and Lambda functions. Amazon Inspector creates a finding when it discovers a software vulnerability or network configuration issue.
+
+Some examples of these vulnerabilities include the following:
+
+1) Package vulnerability: There are software packages in your AWS environment that are exposed to common vulnerabilities and exposures (CVEs).
+2) Code vulnerability: There are lines in your code that attackers could exploit. Other vulnerabilities include data leaks, weak cryptography, and missing encryption.
+3) Network reachability: There are open network paths to Amazon EC2 instances in your environment.
+
+Some features of Amazon Inspector include the following:
+
+1) Continuously scan your environment for vulnerabilities and network exposure.
+2) Assess vulnerabilities accurately and provide a risk score.
+3) Identify high-impact findings.
+4) Monitor and process findings with other services and systems.
+
+Note: The risk score is based on security metrics from the National Vulnerability Database(opens in a new tab) (NVD) and is adjusted according to your compute environment.
+
+AWS Audit Manager helps you continually audit your AWS usage to streamline how you manage risk and compliance with regulations and industry standards.
+
+Audit Manager:
+
+Audit Manager automates evidence collection so you can conveniently assess whether your policies, procedures, and activities (also known as controls) are operating effectively. When it's time for an audit, Audit Manager helps you manage stakeholder reviews of your controls.
+
+Some tasks you can perform with Audit Manager include the following:
+
+1) Upload and manage evidence from hybrid or multi-cloud environments.
+2) Support common compliance standards and regulations.
+3) Monitor your active assessments.
+4) Search for evidence.
+5) Ensure evidence integrity.
+
+AWS Artifact:
+
+AWS Artifact provides on-demand downloads of AWS security and compliance documents, such as AWS ISO certifications, PCI reports, and SOC Reports.
+
+You can submit the security and compliance documents to your auditors or regulators to demonstrate the security and compliance of your AWS infrastructure.
+
+AWS customers are responsible for developing or obtaining documents that demonstrate the security and compliance of their companies. You will learn more about the responsibilities of customers in a later lesson about the Shared Responsibility Model.
+
+AWS CloudTrail:
+
+AWS CloudTrail helps you perform operational and risk auditing, governance, and compliance of your AWS account. Actions taken by a user, role, or an AWS service are recorded as events in CloudTrail. Events include actions taken in the AWS Management Console, AWS Command Line Interface (AWS CLI), and AWS SDKs and APIs.
+
+Visibility into your AWS account activity is a key aspect of security and operational best practices. You can use CloudTrail to view, search, download, archive, analyze, and respond to account activity across your AWS infrastructure. You can identify who took which action, which resources were acted upon, and when the event occurred. These and other details can help you analyze and respond to activity in your AWS account.
+
+AWS Trusted Advisor:
+
+AWS Trusted Advisor helps you optimize costs, increase performance, improve security and resilience, and operate at scale in the cloud.
+
+Trusted Advisor continuously evaluates your AWS environment using best practice checks across the categories of cost optimization, performance, resilience, security, operational excellence, and service limits. It then recommends actions to remediate any deviations from best practices.
+
+Use cases for Trusted Advisor include:
+
+1) Optimizing cost and efficiency
+2) Assessing your AWS environment against security standards and best practices
+3) Improving performance
+4) Improving resilience
+
+
+
+AWS Security Hub:
+
+AWS Security Hub provides customers with a single dashboard to view all security findings, and to create and run automated playbooks.
+
+AWS KMS:
+
+AWS KMS encrypts data and gives customers the choice and control of using AWS managed keys or customer-managed keys to protect their data.
+
+Amazon GuardDuty:
+
+Amazon GuardDuty is a threat detection service that monitors for suspicious activity and unauthorized behavior to protect AWS accounts, workloads, and data.
+
+AWS Shield Advanced:
+
+AWS Shield Advanced helps protect workloads against Distributed Denial of Service (DDoS) events. AWS Shield Advanced includes AWS WAF and AWS Firewall Manager.

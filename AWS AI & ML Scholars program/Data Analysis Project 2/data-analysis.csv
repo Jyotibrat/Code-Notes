@@ -1,0 +1,33 @@
+analysis_type,sort_order,name,group_type,metric_value_1,metric_value_2,metric_value_3,description,analysis_note,action_item
+FACTOR_RANKING,1,Road Type,Infrastructure,0.554,10.68,55.4,Highway: 0.6108 vs Residential: 0.0572,Dominant factor - 10.7x difference between highway and residential roads,High Priority - Focus infrastructure investment here
+FACTOR_RANKING,2,Number of Lanes,Infrastructure,0.53,7.84,53,5 lanes: 0.6076 vs 2 lanes: 0.0775,Critical threshold at 4+ lanes - 7.8x demand increase,High Priority - Multi-lane corridors enable high-volume traffic
+FACTOR_RANKING,3,Large Vehicles Allowed,Infrastructure,0.058,1.78,5.8,Allowed: 0.1319 vs Not Allowed: 0.0740,Moderate impact - 78% higher demand with large vehicle access,Moderate Priority - Important for commercial corridors
+FACTOR_RANKING,4,Time of Day,Temporal,0.043,1.64,4.3,Morning: 0.1091 vs Evening: 0.0664,"Predictable daily pattern - morning peak, evening decline",Moderate Priority - Optimize for peak hours (6-11 AM)
+FACTOR_RANKING,5,Temperature,Environmental,0.008,1.09,0.8,30°C+: 0.0969 vs Below 0°C: 0.0892,Minimal impact - less than 1% variance,Low Priority - Standard maintenance sufficient
+FACTOR_RANKING,6,Landmarks,Location,0.004,1.04,0.4,Without: 0.0963 vs With: 0.0928,Negligible impact - landmarks do not drive demand,Low Priority - Not a meaningful demand driver
+FACTOR_RANKING,7,Weather,Environmental,0.002,1.02,0.2,Rainy: 0.0945 vs Snowy: 0.0926,Virtually no impact - 0.2% variance across conditions,Low Priority - Weather does not affect demand patterns
+SUMMARY_STATS,1,Overall Dataset,Dataset Overview,0.094,0.142,"77,299","Locations: 1249, Avg Lanes: 2.0",Avg Temperature: 16.4°C,Baseline metrics for comparison
+TIME_PATTERN,1,Night (0-5 AM),Temporal,0.092,0.13,"28,563",Daily demand pattern,Moderate period,Standard operations sufficient
+TIME_PATTERN,2,Morning (6-11 AM),Temporal,0.109,0.159,"21,479",Daily demand pattern,Peak period,Optimize capacity for peak demand
+TIME_PATTERN,3,Afternoon (12-5 PM),Temporal,0.097,0.158,"16,168",Daily demand pattern,Moderate period,Standard operations sufficient
+TIME_PATTERN,4,Evening (6-11 PM),Temporal,0.066,0.105,"11,089",Daily demand pattern,Low period,Standard operations sufficient
+TOP_LOCATION,1,qp09d9,Highway,0.961,3.5,52.4,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 16.0°C,Critical high-demand corridor
+TOP_LOCATION,2,qp09ft,Highway,0.869,3.3,48.6,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 16.3°C,Critical high-demand corridor
+TOP_LOCATION,3,qp09e5,Highway,0.865,3.5,61.9,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 16.6°C,Critical high-demand corridor
+TOP_LOCATION,4,qp09d8,Highway,0.669,3.1,59,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 17.3°C,High-demand location
+TOP_LOCATION,5,qp096x,Highway,0.666,3.2,60,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 16.7°C,High-demand location
+TOP_LOCATION,6,qp09d2,Highway,0.665,3,56.2,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 16.8°C,High-demand location
+TOP_LOCATION,7,qp09dc,Highway,0.662,2.9,55.2,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 17.7°C,High-demand location
+TOP_LOCATION,8,qp096r,Highway,0.651,3,57.1,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 16.2°C,High-demand location
+TOP_LOCATION,9,qp09d3,Highway,0.644,3,62.9,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 14.4°C,High-demand location
+TOP_LOCATION,10,qp03xx,Highway,0.631,3,64.8,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 16.8°C,High-demand location
+TOP_LOCATION,11,qp096v,Highway,0.604,3,53.3,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 16.6°C,High-demand location
+TOP_LOCATION,12,qp096q,Highway,0.6,2.9,65.7,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 15.7°C,Moderate-demand location
+TOP_LOCATION,13,qp03xm,Highway,0.575,3.1,53.3,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 16.6°C,Moderate-demand location
+TOP_LOCATION,14,qp09eq,Highway,0.57,2.8,54.8,"Observations: 104, Large Vehicles: Allowed",Avg Temperature: 17.4°C,Moderate-demand location
+TOP_LOCATION,15,qp09uy,Highway,0.568,2.8,62.9,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 16.8°C,Moderate-demand location
+TOP_LOCATION,16,qp03wf,Highway,0.565,2.7,61,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 15.3°C,Moderate-demand location
+TOP_LOCATION,17,qp03yb,Highway,0.545,2.8,61.9,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 17.0°C,Moderate-demand location
+TOP_LOCATION,18,qp03qg,Highway,0.498,2.8,61.9,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 17.2°C,Moderate-demand location
+TOP_LOCATION,19,qp02zw,Highway,0.493,3.1,54.4,"Observations: 79, Large Vehicles: Allowed",Avg Temperature: 15.7°C,Moderate-demand location
+TOP_LOCATION,20,qp03zv,Highway,0.467,3,64.8,"Observations: 105, Large Vehicles: Allowed",Avg Temperature: 16.8°C,Moderate-demand location

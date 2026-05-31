@@ -1,0 +1,184 @@
+ML development lifecycle:
+
+Machine learning (ML) lifecycle refers to the end-to-end process of developing, deploying, and maintaining machine learning models.
+
+The end-to-end machine learning lifecycle process includes the following phases: 
+
+1) Business goal identification
+2) ML problem framing
+3) Data processing (data collection, data preprocessing, and feature engineering)
+4) Model development (training, tuning, and evaluation)
+5) Model deployment (inference and prediction)
+6) Model monitoring
+7) Model retraining
+
+1) Business goal identification:
+
+ML starts with a business objective. Business stakeholders define the value, budget, and success criteria. Defining the success criteria or key performance indicators (KPIs) for the ML workload is critical.  
+
+2) ML problem framing:
+
+The problem formulation entails articulating the business problem and converting it into a machine learning problem.
+
+The data scientist, data engineers, and ML architects work with the line of business subject matter experts (SMEs) to determine whether it is appropriate to use ML to solve the business problem. In this phase, the teams might work on discovery. They will determine whether they have the adequate data, skills, and so on to successfully deliver the business solution.
+
+3) Data processing (data collection, data preprocessing, and feature engineering):
+
+After formulating the problem, the next phase is data processing. To train an accurate ML model, developers use data processing to convert data into a usable format. These steps include:
+
+Data collection and integration: Ensures the raw data is in one centrally accessible place.
+
+Data preprocessing and visualization: Transforms raw data into an understandable format.
+
+Feature engineering: The process of creating, transforming, extracting, and selecting variables from data.
+
+4) Model development (training, tuning, and evaluation):
+
+Model development:
+
+Model development consists of model training, tuning, and evaluation. 
+
+It is an iterative process that can be performed many times throughout this workflow.
+
+Initially, upon training, the model will not yield the expected results. Therefore, developers will do additional feature engineering and tune the model's hyperparameters before retraining.
+
+Retrain:
+
+If the model doesn't meet the business goals, it's necessary to take a second look at the data and features to identify ways to improve the model. Building a model is usually an iterative process. This might also involve adjusting the training hyperparameters.
+
+5) Model deployment (inference and prediction):
+
+If the results are satisfactory, the model is deployed into production. The model is now ready to make predictions and inferences against the model.
+
+6) Model monitoring:
+
+The model monitoring system ensures the model is maintaining a desired level of performance through early detection and mitigation. Monitoring also helps debug issues and understand the model's behavior.
+
+7) Model retraining
+
+The machine learning lifecycle is an iterative process. The model is continuously improved and refined as new data becomes available or as requirements change. This iterative nature helps ensure that the model remains accurate and relevant over time.
+
+
+
+Amazon SageMaker AI:
+
+Collecting, analyzing, and preparing your data:
+
+Amazon SageMaker Data Wrangler is a low-code no-code (LCNC) tool. It provides an end-to-end solution to import, prepare, transform, featurize, and analyze data by using a web interface. Customers can add their own Python scripts and transformations to customize workflows. 
+
+For more advanced users and data preparation at scale, Amazon SageMaker Studio Classic comes with built-in integration of Amazon EMR and AWS Glue interactive sessions to handle large-scale interactive data preparation and machine learning workflows within your SageMaker Studio Classic notebook.
+
+Finally, by using the SageMaker Processing API, customers can run scripts and notebooks to process, transform, and analyze datasets . They can also use various ML frameworks such as scikit-learn, MXNet, or PyTorch while benefiting from fully managed machine learning environments.
+
+At the end of this step, customers usually end up with features to define the model and data for this model to be trained on.
+
+Managing Features:
+
+Amazon SageMaker Feature Store helps data scientists, machine learning engineers, and general practitioners to create, share, and manage features for ML development.
+
+Features stored in the store can be retrieved and enriched before being served to the ML models for inferences.
+
+Model training and evaluation:
+
+SageMaker AI provides a training job feature to train and deploy models using built-in algorithms or custom algorithms.
+
+SageMaker AI launches the ML compute instances and uses the training code and the training dataset to train the model. It saves the resulting model artifacts in an Amazon Simple Storage Service (Amazon S3) bucket that can be used later for inference.
+
+Customers aiming at a LCNC option can use Amazon SageMaker Canvas. With SageMaker Canvas, they can use machine learning to generate predictions without needing to write any code.
+
+Amazon SageMaker JumpStart provides pretrained, open source models that customers can use for a wide range of problem types.
+
+Model evaluation:
+
+Customers can use Amazon SageMaker Experiments to experiment with multiple combinations of data, algorithms, and parameters, all while observing the impact of incremental changes on model accuracy.
+
+Hyperparameter tuning is a way to find the best version of your models. Amazon SageMaker Automatic Model Tuning does that by running many jobs with different hyperparameters in combination and measuring each of them by a metric that you choose.
+
+Deployment:
+
+With SageMaker AI, customers can deploy their ML models to make predictions, also known as inference. SageMaker AI provides a broad selection of ML infrastructure and model deployment options to help meet all your ML inference needs.
+
+Monitoring:
+
+With Amazon SageMaker Model Monitor, customers can observe the quality of SageMaker ML models in production. They can set up continuous monitoring or on-schedule monitoring. SageMaker Model Monitor helps maintain model quality by detecting violations of user-defined thresholds for data quality, model quality, bias drift, and feature attribution drift.
+
+
+
+Validation Set:
+
+To begin evaluating how the model responds in a non-training environment, start by looking at the data that was set aside as the validation set. You want to make sure that the model generalizes to data it has not seen. The model still needs to be improved before determining that it’s ready for production. 
+
+Test Set:
+
+After you’ve improved the model using that validation data, you’re ready to test it one last time to ensure its predictive quality meets your standards.
+
+Classification Metrics:
+
+1) Accuracy
+2) Precision
+3) Recall
+4) F1
+5) AUC-ROC
+
+Regression Metrics:
+
+1) Mean squared error
+2) R squared
+
+
+
+Model Deployment:
+
+Managed API:
+
+Managed API services are cloud-based services that provide a fully managed environment for deploying and hosting your ML models as APIs. SageMaker AI is an example. These services abstract away the underlying infrastructure management so you can focus on building and deploying your models.
+
+Self-hosted API:
+
+In a self-hosted API approach, you deploy and host your ML models on your own infrastructure, either on premises or in the cloud (using virtual machines or containers). This approach involves setting up and managing the necessary infrastructure, such as web servers, load balancers, and databases, to serve your ML models as APIs.
+
+deployment options on SageMaker AI:
+
+Batch Transform:
+
+Use batch transform when you need to get inferences from large datasets and don't need a persistent endpoint. You can also use it when you need to preprocess datasets to remove noise or bias that interferes with training or inference from your dataset.
+
+Asynchronous:
+
+SageMaker AI asynchronous inference is a capability in SageMaker AI that queues incoming requests and processes them asynchronously. This option is ideal for requests with large payload sizes (up to 1GB), long processing times (up to one hour), and near real-time latency requirements. 
+Click to flip
+
+
+
+MLOps:
+
+MLOps refers to the practice of operationalizing and streamlining the end-to-end machine learning lifecycle from model development and deployment to monitoring and maintenance. It helps ensure that models are not just developed but also deployed, monitored, and retrained systematically and repeatedly.
+
+It is an extension of the DevOps principles and practices to the specific domain of machine learning systems.
+
+Key Principles of MLOps:
+
+1) Version Control:
+
+For reproducibility, machine learning workflows must track changes to assets like data, code, and models. It can be rolled back to previous versions when needed.
+
+Overall, version control and code review provide reproducible, trustworthy machine learning.
+
+2) Automation:
+
+For repeatability, consistency, and scalability, you can automate the various stages in the machine learning pipeline. This includes the data ingestion, pre-processing, model training, and validation and deployment stages. 
+
+Automated testing helps you discover problems early for fast error fixes and learnings.
+
+3) CI/CD:
+
+Through automation, you can continuously test and deploy assets in the following ways:
+
+1)Continuous integration extends the validation and testing of code to data and models in the pipeline.
+2)Continuous delivery automatically deploys the newly trained model or model prediction service.
+3)Continuous training automatically retrains ML models for redeployment.
+4)Continuous monitoring uses data monitoring and model monitoring of metrics related to business.
+
+4) Model Governance:
+
+Good governance of machine learning systems requires close collaboration between data scientists, engineers, and business stakeholders. Clear documentation, effective communication channels, and feedback mechanisms help align everyone and improve models over time. It is also crucial to protect sensitive data, secure access, and meet compliance rules. A structured process for reviewing, validating, and approving models before deployment checks for fairness, bias, and ethics. Governance manages all aspects of systems for efficiency.
