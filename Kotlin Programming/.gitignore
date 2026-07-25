@@ -1,0 +1,6 @@
+# Compiled files
+*.class
+*.jar
+
+# Kotlin metadata
+META-INF/
