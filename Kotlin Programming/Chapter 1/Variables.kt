@@ -1,3 +1,5 @@
+// This is a program which demonstrates how variables are used in Kotlin
+
 fun main(){
     // Defining a variable
     val a = 10 // 'val' is used to declare a read-only variable

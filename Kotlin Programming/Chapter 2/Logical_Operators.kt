@@ -1,3 +1,5 @@
+// This is a program which demonstrates how Logical Operations are performed in Kotlin
+
 fun main(){
     // && Operator
     val a = 10
