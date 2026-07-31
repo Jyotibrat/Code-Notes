@@ -126,4 +126,8 @@ data class Rectangle(val length: Float, val width: Float){ // Data classes in Ko
 		But, in case of data class when we do comparison we compare the data not the memory of the instances.
 		Also when we print the instance of a normal class it will give a memory address and not the values inside it.
 		But, when we print a instance of a data class it will give the values of the data in a human readable format. 
+		
+		We can copy the values of a instance of a class to another instance using the == operator.
+		But If we want to change few values of some data before copying we can do it using .copy() function.
+		Read the Code above to understand the concept.
 */
