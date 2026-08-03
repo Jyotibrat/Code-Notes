@@ -65,3 +65,11 @@ data class rectangle(val length: Float, val width: Float) : shape{
 		return (2 * length) + (2 * width)
 	}
 }
+
+/*
+NOTE:
+	Interfaces are used to define how classes should be written.
+	They provide kind of like a structure like what functions should be there and what will be there return type.
+	They also define what variables should be there.
+	They are kind of similar to what we have seen interfaces in JS and TS.
+*/
